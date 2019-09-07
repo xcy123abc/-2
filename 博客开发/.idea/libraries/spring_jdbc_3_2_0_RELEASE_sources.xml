@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-jdbc-3.2.0.RELEASE-sources">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/libs/spring-jdbc-3.2.0.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/../web/js/jquery-3.3.1.min.js"></script>
+    <script>
+        /**
+         * 入口函数
+         */
+        $(function () {
+            alert("nihao")
+            /**
+             * 按钮展开的点击事件
+             */
+            $("#login").blur(function () {
+                alert("nihao")
+                $.post("loginServlet4",$("#loginForm").serialize(),function (date) {
+                    var h = $("#msg")
+                    if (date =="false"){
+                        h.html("登陆失败")
+                    }else{
+                        alert("bug")
+                    }
+                })
+            })
+        });
+    </script>
+
+
+    <title>关于</title>
+</head>
+<body>
+    <form name="loginForm">
+        <input name="username" type="text" >账号
+        <input  name="password" type="password">密码
+        <input id="login"  >登陆</input>
+        <h1 id="mag"></h1>
+    </form>
+
+</body>
+</html>

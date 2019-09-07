@@ -1,0 +1,65 @@
+
+body{
+    background: #C0C0C0;
+    margin: 0;
+}
+.header {
+    margin: 0px;
+    width: 100%;
+    height: 80px;
+    padding-top: 40px;
+}
+.header-msg{
+    height: 40px;
+    width: 100%;
+    /*background: #2aabd2;*/
+    /*margin: auto;*/
+    text-align: center;
+    line-height: 40px;
+    font-size:30px;
+
+}
+.ddd{
+    height: auto;
+    margin-top: 20px;
+    padding-top: 0px;
+    }  <!--核心容器 浅蓝色层-->
+           /*.img{
+    /*width: 200px;*/
+    /*height: 120px;*/
+/*}*/
+.block{
+               background: #000;
+    text-align: center;
+
+           }
+.footer{
+    border-radius: 20px;
+    margin-top: 70px;
+    height: 40px;
+    width: auto;
+    background: grey;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 20px;
+    text-height: 40px;
+    padding-top: 5px;
+
+}
+.img-conn{
+    width: auto;
+    height: 200px;
+}
+.massage{
+    width: 400px;
+    height: 400px;
+    background: #000;
+    position: fixed;
+}
+
+.ad{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #000;
+}

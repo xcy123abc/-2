@@ -1,0 +1,110 @@
+
+body{
+    background: #C0C0C0;
+
+}
+.header {
+    margin: 0px;
+    width: 100%;
+    height: 80px;
+    padding-top: 40px;
+}
+.header-msg{
+    height: 40px;
+    width: 100%;
+    /*background: #2aabd2;*/
+    /*margin: auto;*/
+    text-align: center;
+    line-height: 40px;
+    font-size:30px;
+
+}
+
+.ddd{
+    border-radius: 80px;
+
+    background: gainsboro;
+}  <!--核心容器 浅蓝色层-->
+
+.lei-a-mima {
+    border-right: 2px solid black;
+
+    margin: 0;
+}
+.qqnl {
+    border-left: 2px solid black;
+    margin: 0;
+}
+#jianli{
+
+    font-size: 40px;
+    margin-right: 20px;
+    margin-bottom: 60px;
+}
+
+.lei-a-foot{
+    margin-top:20px;
+    margin-right: 35px;
+    border-top: 2px solid black;
+    padding: 0;
+    text-align: center;
+}
+
+.wechat-img {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 5px;
+    height: 140px;
+    /*background-image: url("../img/wechat-img.jpg");*/
+
+}
+
+.lei-b-top{
+    border-bottom: 2px solid black;
+    margin-top: 60px;
+    padding-bottom: 10px;
+
+
+}
+.lei-b-top-top {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.lei-b-body-block{
+    margin-top: 10px;
+}
+
+.margin-left{
+    margin-left: 10px;
+}
+.margin-left1{
+    margin-left: 50px;
+}
+.margin-left2{
+    margin-left: 65px;
+}
+.float-right{
+    float: right;
+    /*background: red;*/
+}
+
+.footer{
+    border-radius: 20px;
+    height: 40px;
+    width: auto;
+    background: grey;
+    margin-bottom: 0;
+
+}
+.bottom-p {
+    font-size: 25px;
+    text-height: 40px;
+    margin: 0;
+}
+
+
+.img-cont{
+   margin-left: 200px;
+}

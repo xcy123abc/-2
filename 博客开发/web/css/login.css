@@ -1,0 +1,132 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url("../img/5.jpg");
+    background-size: cover;
+}
+
+.login-box {
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    width: 420px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 0;
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.login-box .login-field {
+    position: relative;
+
+}
+
+.login-box .login-field input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .login-field label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .login-field input:focus ~ label,
+.login-box .login-field input:valid ~ label {
+    top: -23px;
+    left: 0;
+    color: aqua;
+    font-size: 12px;
+}
+
+.login-box button {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.login-box a{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration:none;
+
+}
+
+h4 {
+    padding: 6px;
+}
+.msg{
+    margin-left: 714px;
+    width: 417px;
+    height: auto;
+    margin-top: 500px;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+    border-radius: 10px;
+}
+
+
+
+#finename_msg{
+
+    width: 420px;
+    height: auto;
+    margin-top: 520px;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    background: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+    border-radius: 10px;
+}
+
+
+
+
+

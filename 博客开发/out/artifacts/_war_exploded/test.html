@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/information.css">
+
+    <title>主页-个人信息</title>
+
+    <script>
+        //入口
+        $(function () {
+
+                $.get("FindInformationServlet" ,{},function (date) {
+                        var inf = date[0];
+                        $("#name").html(inf.name);
+                },"json")
+
+
+        })
+
+    </script>
+</head>
+    <button id="1">1</button>
+    <div id="information_lei_a_top">
+        <h3 id="name"></h3>
+        <h3 id="sex"></h3>
+
+
+
+<body>
+
+</body>
+</html>

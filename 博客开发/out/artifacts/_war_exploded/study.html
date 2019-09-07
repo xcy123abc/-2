@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/study.css">
+    <script>
+        //
+        $(function () {
+
+            setTimeout(msgShow,600);
+            setTimeout(msgHide,3000);
+
+            function msgShow() {
+                $("#msg").slideDown("slow");
+            }
+            function msgHide() {
+                $("#msg").slideUp("slow");
+            }
+
+        })
+
+    </script>
+
+    <title>学习</title>
+
+</head>
+<body>
+<!--页眉-->
+    <!--只有登陆提示信息-->
+    <div class="container-fluid">
+        <div class="header">
+            <!--登陆提示信息-->
+            <div class="header-msg">
+              <p id="top"></p>
+            </div>
+        </div>
+    </div>
+
+<div id="msg" class="row" style="display: none">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="study-msg ">
+            <div style="text-align: center;font-size: 40px;" class="alert alert-danger" role="alert">页面资源来自网络，侵删!</div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--主体-->
+    <!--主体容器-->
+    <div class="container">
+        <!--导航行条-->
+        <div class="row">
+            <div class="col-md-1"></div>
+                <div class="col-md-10">
+                <!--导航条-->
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!--<a class="navbar-brand" href="#">菜单</a>-->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li ><a href="information.html">个人资料</a></li>
+                                    <li><a href="action.jsp">个人动态</a></li>
+                                    <li class="active"><a href="study.html">相关资料<span class="sr-only">(current)</span></a></li>
+                                    <li><a href="about.html">关于</a></li>
+                                    <li><a href="login.jsp">登陆</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <!--信息-->
+        <div class="row">
+            <div class="col-md-1"></div><!-- 无内容   控制内容白边-->
+            <div class="col-md-10 ddd "><!--核心容器   存放信息  信息为左右两列-->
+
+                <!-- 一行的模板-->
+                <div class="row">
+                    <div class=" col-md-4  ">
+                        <div class="thumbnail" >
+                            <img src="./img/stady1.jpeg" alt="图片">
+                            <div class="caption ">
+                                <h3 class="">JAVA核心技术-卷I-pdf</h3>
+                                <p>java领域 最有影响力和价值的著作之一 Java核心技术 卷1 基础知识 原书第10版-高清pdf</p>
+                                <p><a class="btn btn-primary btn-lg" role="button" disabled="disable">相关链接</a>
+                                    <a href="/DownServlet?filename=java1.pdf" class="btn btn-primary btn-lg big" role="button" >下载</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="thumbnail ">
+                            <img height="500" class="" src="./img/mysql1.png" alt="图片">
+                            <div class="caption">
+                                <h3>MySQL5.6</h3>
+                                <p>MySQL5.6从零开始学-高清pdf</p>
+                                <p><a  class="btn btn-primary btn-lg" role="button" disabled="disable">相关链接</a>
+                                    <a href="/DownServlet?filename=mysql1.pdf" class="btn btn-primary btn-lg" role="button">下载</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/spring实战.png" alt="图片">
+                            <div class="caption">
+                                <h3>Spring实战</h3>
+                                <p>Spring实战-高清pdf</p>
+                                <p><a  class="btn btn-primary btn-lg" role="button" disabled="">相关链接</a>
+                                    <a href="/DownServlet?filename=Spring实战.pdf" class="btn btn-primary btn-lg" role="button" >下载</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--pdf -->
+                <!-- 一行的模板-->
+                <div class="row">
+                    <div class="col-md-4  ">
+                        <div class="thumbnail" >
+                            <img src="./img/csdn.png" alt="图片">
+                            <div class="caption ">
+                                <h3 class="">成为顶尖java程序员</h3>
+                                <p>学习的最好途径就是看书，看这十一本书就够了</p>
+                                <p><a  target="_blank" href="https://blog.csdn.net/wu2374633583/article/details/70891233" class="btn btn-primary btn-lg" role="button">相关链接</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 ">
+                        <div class="thumbnail ">
+                            <img src="../img/csdn.png" alt="图片">
+                            <div class="caption">
+                                <h3>震惊</h3>
+                                <p> 十一本就够了？？十一本？？？就？？？这？？？</p>
+                                <p><a class="btn btn-primary btn-lg" role="button" disabled="">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="thumbnail">
+                            <img src="../img/csdn.png" alt="图片">
+                            <div class="caption">
+                                <h3>震惊</h3>
+                                <p>你以为只是小小的吐槽？NO!我必不可能告诉你我是偷工减料【手动滑稽】</p>
+                                <p><a  class="btn btn-primary btn-lg" role="button" disabled="">相关链接</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一行的模板-->
+                <div class="row">
+                    <div class=" col-md-4  ">
+                        <div class="thumbnail" >
+                            <img src="./img/csdn.png" alt="图片">
+                            <div class="caption ">
+                                <h3 class="">Inter IDEA破解安装教程</h3>
+                                <p>国际惯例 : 如果真正在工作中使用到，还请购买正版支持。</p>
+                                <p><a href="https://blog.csdn.net/visionzheng/article/details/81116683" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 ">
+                        <div class="thumbnail ">
+                            <img src="./img/csdn.png" alt="图片">
+                            <div class="caption">
+                                <h3>Ubantu各版本下载</h3>
+                                <p>内有官方网站的下载网址。网易镜像站的下载链接</p>
+                                <p><a href="https://blog.csdn.net/qq_30815237/article/details/87650559" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/csdn.png" alt="图片">
+                            <div class="caption">
+                                <h3>JDK安装教程</h3>
+                                <p>JDK安装图文教程以及环境变量的配置，测试doc命令</p>
+                                <p><a href="https://blog.csdn.net/weixin_39047791/article/details/82109867" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一行的模板-->
+                <div class="row">
+                    <div class=" col-md-4  ">
+                        <div class="thumbnail" >
+                            <img src="./img/python.jpg" alt="图片">
+                            <div class="caption ">
+                                <h3 class="">Python入门教学视频</h3>
+                                <p ></p>
+                                <p><a href="https://www.bilibili.com/video/av14184325" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 ">
+                        <div class="thumbnail ">
+                            <img src="./img/etai.jpg" alt="图片">
+                            <div class="caption">
+                                <h3>Solidity开发视频教程</h3>
+                                <p></p>
+                                <p><a href="https://www.bilibili.com/video/av38555778" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/idea.jpg" alt="图片">
+                            <div class="caption">
+                                <h3>IDEA安装视频教程</h3>
+                                <p></p>
+                                <p><a href="https://www.bilibili.com/video/av28528399" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class=" col-md-4  ">
+                        <div class="thumbnail" >
+                            <img src="./img/linux.jpg" alt="图片">
+                            <div class="caption ">
+                                <h3 class="">Linux兄弟连教学视频</h3>
+                                <p ></p>
+                                <p><a href="https://www.bilibili.com/video/av18156598" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 ">
+                        <div class="thumbnail ">
+                            <img src="./img/设计模式.jpg" alt="图片">
+                            <div class="caption">
+                                <h3>Java设计模式教学视频</h3>
+                                <p></p>
+                                <p><a href="https://www.bilibili.com/video/av56760712" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/mysql视频.jpg" alt="图片">
+                            <div class="caption">
+                                <h3>MySQL入门视频教程</h3>
+                                <p></p>
+                                <p><a href="https://www.bilibili.com/video/av19538278" target="_blank" class="btn btn-primary btn-lg" role="button">相关链接</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+                <div class="col-md-1"></div>
+                <a href="#top" type="button" class="btn btn-default btn-lg active">返回顶部</a>
+                <div class="col-md-4"></div>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <!--操作日志 -->
+    <div class="row ">
+        <div class="col-md-2">
+            <div class="massage" >
+                <div class="alert alert-danger" role="alert"></div>
+            </div><!-- 静态布局框架-->
+
+        </div>
+    </div>
+</div><!--警告框 -->
+
+
+
+<!--页脚填充的信息-->
+    <!--存放结束信息-->
+    <div class="container ">
+        <div class="col-md-1"></div><!--格式控制，无内容-->
+        <div class="col-md-10"><!--格式控制，无内容-->
+            <div class="row footer">
+
+                <!--存放xcy-->
+                <p class="footer-msg">待更新。。。2019.8.12</p>
+
+            </div><!--存放结束信息-->
+         </div>
+        <div class="col-md-1"></div><!--格式控制，无内容-->
+    </div>
+
+
+
+</body>
+</html>

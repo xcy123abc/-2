@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/about.css">
+    <script>
+        /**
+         * 入口函数
+         */
+        $(function () {
+
+            /**
+             * 按钮展开的点击事件
+             */
+            $("a").on('click',function () {
+                if($(this).prev().hasClass("auto")){
+                    $(this).text("展开");
+                    $(this).prev().removeClass("auto")
+                }else{
+                    $(this).text("收起");
+                    $(this).prev().addClass("auto")
+                }
+            })
+        });
+    </script>
+
+
+    <title>关于</title>
+
+</head>
+
+<body>
+
+    <!--页眉--><!--无内容-->
+    <div class="container-fluid"><div class="header"><div class="header-msg"><p></p></div></div></div>
+
+    <!--主体-->
+    <div class="container">
+
+        <!--导航行条-->
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="information.html">个人资料</a></li>
+                                    <li><a href="action.jsp">个人动态</a></li>
+                                    <li><a href="study.html">相关资料</a></li>
+                                    <li class="active"><a href="about.html">关于<span class="sr-only">(current)</span></a></li>
+                                    <li><a href="login.jsp">登陆</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div><div class="col-md-1"></div>
+        </div>
+        <!--/导航行条结束-->
+
+
+        <!--存关于about的信息-->
+        <div class="col-md-1"></div><!-- 无内容   控制内容白边--><div class="col-md-10 ddd "><!--核心容器   存放信息  信息为左右两列-->
+
+            <!--block 模板-->
+            <div class="bdd"><div class="row ">
+                    <div class=" block-body"><!-- 承载内容 -->
+                    <div class="auto">
+                        <h1>感谢实验室支持：</h1><!-- b标题-->
+                        <h3>本次搭建个人博客所需学习资源以及开发环境由仲恺农业工程学院英东楼616实验室提供，特此鸣谢!!</h3>
+                    </div>
+                </div>
+                    <a class="block-foot-a btn btn-default">展开</a> <!--展开按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+
+            <!--block 模板-->
+            <div class="bdd"><div class="row ">
+                    <div class=" block-body"><!-- 承载内容 -->
+                        <div class="auto">
+                            <h1>所用技术：</h1> <!--标题-->
+                            <h3>前端基础 ：HTML、CSS、JavaScript库JQ、 前端框架 ：bootstrapt、Java基础、服务器 ：tomcat， web开发相关基础知识（Servlet、Request\Response、Cookie\Session、Filter、ajax、json等） 开发语言：Java 开发工具 ：IDEA。数据库因某些原因不可用。故本博客数据存储在服务器，部分数据为静态数据 </h3>
+                        </div>
+                    </div>
+                    <a class="block-foot-a btn btn-default">展开</a>   <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <!--block 模板-->
+            <div class="bdd"><div class="row ">
+                    <div class=" block-body"><!--承载内容 -->
+                        <div class="auto">
+                            <h1>博客功能：</h1>
+                            <h3>具备基本的登陆功能，展现个人资料功能。以及存储部分学习资料的
+                                下载功能，比如相关书书记的pdf下载，其中也有优质视频推荐以及文
+                                章推荐。具备发表短文/文章的功能。具备游客查看个人动态的功能（理论上），
+                                由于时间关系，注册功能尚未开发完成，发的动态
+                                以及文章也只能是纯文本，添加表情以及图片的功能尚未开发。个人资料
+                                也是静态的数据，后期熟悉掌握与数据库交互后再把数据存到数据库中，实现
+                                动态化页面，并完善修改个人简历的功能</h3>
+                        </div></div>
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <div class="alert alert-success" role="alert">
+                            <h1 style="text-align: center;font-family: 幼圆;margin-top: 30px;margin-bottom: 30px;padding-top: 5px;margin-left: 30px">
+                                <strong>以下是功能的介绍</strong>
+                            </h1>
+                            <h3 style="text-align: center">（前方高能）</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <!--<a class="block-foot-a btn btn-default">展开</a>     &lt;!&ndash;按钮 &ndash;&gt;-->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>记录操作的日志：</h1>
+                            <h3>你可能会好奇，操作日志日志有什么高能的，但其实这个功能的实现应该是博客系统里面有相当难度的，
+                                反正对我这种新手来说是的，里面记录了一些关键操纵的
+                                提示，比如登陆成功与否，或者记录管理员或者游客上次访问的时间，或者发表动态的成功与否
+                                以及后台需要给页面提示的消息。其中运用到的知识比较全面，是整个blog中与后台交互最多的板块
+                                </h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>登陆：</h1>
+                            <h3>登陆框的账号有判断功能，如果账号是非管理员账号，则会提示出错，登陆成功后会跳转到个人动态页面。登陆界面也有游客访问功能
+                                ，游客访问时相关功能不开放</h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>发表动态的功能：</h1>
+                            <h3>需要登陆才能使用该功能，可发表文本到动态框中，并保存一定的时间，动态其他游客访问时也可见（理论上，由于是idea部署的项目，所以可能数据会没有被服务器保存）
+                                动态的数据可由后台操作管理，也可保存相当长一段时间</h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>资料共享：</h1>
+                            <h3>该页面存了一些资源可以分享给别人，比如书籍的pdf下载啊，目前不支持在线阅读，
+                                或者一些优质的资源链接推荐，等待资源，都可以以文件或者相关链接的姓氏保存在页面上
+                                </h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>个人简历：</h1>
+                            <h3>由于在与数据库交互过程中存在的报错还没有解决，所有该页面是静态的，没有与后台服务器进行交互
+                                ，不过静态的数据用来展示个人简历这个需求，还是可以的
+                                </h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <div class="alert alert-success" role="alert">
+                                <h1 style="text-align: center;font-family: 幼圆;margin-top: 40px;margin-bottom: 40px;padding-top: 5px;margin-left: 30px">
+                                    <strong>以下是功能实现的原理</strong>
+                                </h1>
+                            </div>
+                            <h3 style="text-align: center"></h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <!--<a class="block-foot-a btn btn-default">展开</a>-->     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>登陆页面：</h1>
+                            <h3>账号输入框的判断账号是否未管理员：使用（Jq）给账号输入款绑定鼠标移走事件，
+                                移走后会调用函数，函数体发送异步请求（ajax）携带输入的账号，到服务器（一个servlet中），然后该servlet
+                                获取并判断该username是否未管理员账号，如果是，则发送返回数据（我使用的是存储一个true或者false到flag中，然后写回flag
+                                ），ajax再判断服务器的返回数据，然后对特定位置的元素做特定的处理（我是在ajax请求的回调函数中给某个位置的元素）
+                                添加信息，比如（非管理员账号）。该功能可以自动提醒管理员账号是否输入正确，还是挺良心的。 以上 。
+                                登陆页面的第二个功能：管理员登陆功能。   实现：输入账号账号密码提交后，会提交到服务器（一个servlet中），
+                                服务器判断密码是否正确，正确则用request存储登陆成功信息，同时返回上次登陆的时间，首次登陆则存储信息（欢迎首次登陆）
+                                （原理略过，有点小复杂），若密码不正确，则存储错误信息，然后转发到登陆页面，值得一提的是，若登陆成功，还会用session存一个登陆状态的信息，给后面权限判断用
+                                做完这些后，该servlet转发到首页，首页的日志会获取这些信息，然后展示。以上。是第二个功能管理员登陆的实现。第
+                                三个功能是游客登陆，直接访问服务器（一个servlet），判断上次登陆时间后转发到首页。首页的日志也会获取上一个servlet存储的信息。
+                                以上是游客登陆功能的实现。
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>动态页面（首页）：</h1>
+                            <h3>先说明，因为servlet调用数据库的问题没有解决，为了实现动态发表文章的功能，我还尝试了redis数据库来存数据，但是最后都报错了，没办法才用了session来
+                                存数据，我也不知道这种算法效率如何，但是技术有限，能想到和使用的只有这个方法了。
+                                正文开始 。该页面核心功能是操作日志的实现以及文章的展示，另外两个小功能先简单提一下。一个是添加表情，功能还没开发出来，所以点击
+                                会通过servlet存一个数据，操作日志捕获，突然发现，好像用（Jq）绑定事件直接给日志的元素添加文本提示要方便，不过后期
+                                开发的时候，这个servlet还是要用到的，所以先不改动这个servlet。另外一个小功能就是存储文章的容器可以滚动，这个是前端的
+                                东西，也不难实现，就不提了。好了，下面是正文。该页面的第一个功能：发表文章。这说起来是一个悲伤的故事，如果数据库可以用
+                                ，那要实现应该不难，但是我不知道为啥servlet new 调用数据库所需的对象时，就会报错，弄了两天，没解决，时间也不多了，所以我
+                                放弃了mysql数据库，准备想别的方法实现发动态的文章。然后我研究了redis数据库，发现有方法实现数据的长期保存，开始写
+                                demo，测试，然后发现。。。。同样报错，我看了一些资料，大概就是jar包没有导入，或者环境变量的tomcatVM参数的配置问题
+                                就是没有解决，中间以为是IDEA的问题，还换了一个最新版的，用了maven来管理，试试看用maven能不能解决数据库的问题，
+                                但是最后还是不行，然后我只能想别的数据，可以长时间保存的，然后想到用session来存数据到服务器，默认session 的存活时间只有30
+                                分钟，但是可以通过tomcat的配置文件去修改存活时间，所以是可以把数据存到session里的。而且tomcat正常关闭时，会把服务器的session数据
+                                序列化（钝化到硬盘上），下次启动时再活化到session中。所以理论上是可行的。接下来就是怎么存储的问题的，就在一个月黑分高的晚上，
+                                我用栈的数据结构，虚拟一个栈出来，然后存储数据。 说一下思路：首先是栈顶指针的问题，存一个（"Top","1"）的session来解决，发送发表文章的请求则会
+                                判断是否存在Top，第一次发表，则是不存在，这个时候新建指针，session名为Top的值为1，然后存入数据，文章内容存入session的键为Top的值中
+                                ，然后Top的值++，这样就可以了，实操后我就开始挠头了，Top的值加一后为String类型的11，第三次为111，？？仔细一想，因为session的键和值都是字符串类型的（可以这样理解）
+                                所以String + int 最后变成String类型的11，再加就是111，那就把第二次的文章存在键为11的值中???
+                                no，这样获取数据似乎有些麻烦把。通过一些转换，可以虚拟一个top的变量，其值（2，3，4，int类型的）作为Top指针的值（指针的值是11，111）（指针本质是session，其值为键名Top的值）；
+                                再后面怎么实现相信读到这里的人都懂了，我也不多说了，有兴趣可以看看源码。AddActionServlet里。到这后，基本上动态的发表文章功能就可以实现了这一步后，后面再文章内容框里写获取
+                                session的java语句就可以了。get不到就显示为空，get到了就显示出来。不过这样实现显然是有很多问题要完善的，比操作数据库麻烦很多。
+                                实现这个功能后，其实还是很满足的，也不是因为多牛皮，而是因为想各种办法来实现，最后这个把数据存储在session的方法，是感觉可行，然后开始在草稿纸上面
+                                构思，想数据怎么存，然后代码怎么写，然后碰到类似指针加1编变成11，再加1变成111的情况怎么去解决。最后实现了这个功能，感觉收获很多。
+                                然后，第二个功能是操作日志的功能。实现，通过jsp脚本或者jq添加原本，来向操纵日志输出信息。
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>个人简历：</h1>
+                            <h3>因为没有成功解决servlet获取数据库数据的问题，所以个人简历页面都是静态数据，唯一的亮点是加载页面后有简单的动态效果</h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+            <div class="bdd">
+                <div class="row ">
+                    <!--内容 -->
+                    <div class=" block-body"><!--body  承载内容 -->
+                        <div class="auto">
+                            <h1>源码：</h1>
+                            <h3 style="margin-top: 40px;:">搭建博客的源码在下面</h3>
+                            <h3 style="margin-top: 50px;margin-left: 250px">源码？你懂我意思</h3>
+                            <img src="img/二维码.png" style="height: 40%;width: 40%;margin-left: 250px">
+                            <h3 style="margin-left: 250px">开玩笑的，如有需要请联系我</h3>
+                        </div>
+                    </div>
+                    <!-- 按钮 -->
+                    <a class="block-foot-a btn btn-default">展开</a>     <!--按钮 -->
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <!--block 模板-->
+
+
+
+        <div class="col-md-1"></div>
+        </div>
+    </div>
+
+
+    <!--页脚的信息-->
+        <div class="container"><div class="col-md-1"></div><div class="col-md-10"><div class="row footer">
+
+            <p class="bottom-p">@xcy——2019.8.15</p>
+
+        </div></div><div class="col-md-1"></div></div>
+
+
+</body>
+
+</html>

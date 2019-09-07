@@ -1,0 +1,12 @@
+.ddd{
+    width: 400px;
+    height: 200px;
+    background: #03a9f4;
+    overflow-y: auto;
+}
+.blocks{
+    width: 400px;
+    height: 600px;
+    background: #d4d4d4;
+}
+.blocks

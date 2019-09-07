@@ -1,0 +1,343 @@
+###response笔记
+    1.重定向的方法：response.sentRedirect("资源路径");
+        *补充：
+            1.重定向特点：redirect
+                1.地址栏发生改变
+                2.重定向可以访问其他站点（服务器）的资源
+               *3.重定向是两次请求。不能使用request来共享数据（request.setAttribute()和getAttribute())
+            2.转发的特点：forward
+                1.转发地址栏路径不变
+                2.转发只能访问当前服务器
+                3.转发只是一次请求，可以使用response来共享数据
+    2.相对路径和绝对路径 (./为当前路径，可以省略  ../为上一级路径）
+        1.相对路径：通过相对路径可以确定唯一资源
+            * 如 ./index.html
+            * 不以/开头，以.开头或者省略
+
+            规则：找到当前资源与目标资源的相对位置关系
+                * ./ 为当前路径，可以省略
+                * ../为上一级路径
+        *2.绝对路径：通过绝对路径可以确定唯一资源（推荐使用）
+                * 如  ：http://localhost/day15/responseDemo2         /day15/responseDemo2
+                * 以/开头的路径
+
+            规则：判断定义的路径是给谁用的？判断请求从哪来
+                * 客户端使用 ：需要加虚拟目录（项目的访问路径）
+                    *建议虚拟目录动态获取 ：request.getContextPath()
+                    *<a>,<form> 重定向...
+
+                * 服务器使用 ：不需要加虚拟目录
+                    *转发路径
+
+    3.服务器发送数据到浏览器
+
+         1.输出字符数据
+            *步骤
+              1.1.获取字符输出流
+                PrintWriter pw = response.getWriter();
+              1.2.输出数据
+                pw.write("你好，hello");
+
+
+            * 乱码 ： 用这行代码即可：response.setContentType("text/html;charset=utf-8");
+                    浏览器默认字符集GBK（gb2312）
+                    获取的字符流是tomcat给的，流的编码是ISO
+                *解决方法：
+                     1.2.1.获取流对象之前，设置为  utf-8
+                      response.setCharacterEncoding("utf-8");
+
+                    (建议用2)1.2.2.告诉浏览器服务器发送数据的编码
+                     response.setHeader("content-type","text/html,charset=utf-8");
+                     简单的代码：
+                     response.setContentType("text/html;charset=utf-8");
+
+         2.输出字节数据
+            *步骤
+               2.1.获取字节输出流 ：ServletOutputStream ops = response.getOutputStream();
+               2.2.输出数据 ：ops.write("输出字节流hahahah".getBytes("utf-8"));
+                    *注意 ：
+                        如果输出字节数据，服务器为告知浏览器字符集类型
+                        getBytes()中可以空参，如果告知，则需要传递字符集类型作为字符串参数
+
+    4.验证码
+        4.1笔记：基本上都在CheckCodeDemo1和register。html里
+
+    5.ServletContext对象
+        1. 概念：代表整个web应用，可以和服务器来通信
+
+        2. 对象的获取（2种方法ServletContextDemo1）
+
+        3. 功能：
+                 *获取MIME类型（demo2）：在互联网通行的过程中定义的一种文件数据类型
+                    格式： 大类型/小类型  text/html   image/jpeg
+                    获取 : String getmimetype(String file)
+
+                 *域对象：数据共享（demo3和4）
+                              1 setAttribute()
+                              2 getAttribute()
+                              3 removeAttribute()
+                         对象范围
+                 * 获取文件的真实（服务器）路径
+                     1方法 getRealPath()demo5
+                      三种类型放置的情况,a.txt  b.txt   c.txt
+
+                        * main里的东西最后放在WEB-INF的classes里
+
+    6 案例：DownloadServletDemo1
+        * 文件下载需求：
+                1.页面显示超链接
+                2.任何资源都必须弹出下载框
+                3.完成图片文件下载
+
+        * 分析：
+            1.能解析则加载显示，不能解析则弹出下载框
+            2.任何资源都必须弹出下载框
+            3.使用响应头设置资源打开的方式
+                * content-disposition:attachment;filename=xxx
+
+        * 步骤：
+            1.定义页面，编辑href属性，指向servlet，传递资源名称filename
+            2.定义servlet
+                1.获取文件名称
+                2.使用字节输入流加载文件进内存
+                3.指定response的响应头：content-disposition:attachment;filename=xxx
+                4.将数据写出到response输出流
+
+
+            问题
+                中文问题
+                解决方法：
+
+
+###会话技术：
+
+        1.会话：一次会话包含多次请求和响应
+            * 一次会话：浏览器第一次给服务器发送请求，会话建立。直到有一方断开为止
+        2.功能：在一次会话的范围内的多次请求间，共享数据
+        3.方式：
+            1.客户端会话技术：Cookie
+            2 .服务端会话技术：Session
+
+###Cookie
+        1.概念：客户端会话技术，将数据保存到客户端
+
+        2.快速入门(demo1和demo2)
+            *使用步骤：
+                1.创建Coolie对象，绑定数据
+                    * new Cookie(String name,Stirng value);
+                2.发送Cookie对象
+                    *response.addCokie(Cookie cookie)
+                3.获取Cookie，拿到数据
+                    * Cookie [] request.getCookie
+                * 注意：cooie值不能存在空格
+            *同一浏览器才能进行会话
+
+        3.原理
+            * 基于响应头set-cookie和请求cookie实现
+
+        4.cookie的细节
+            1.一次可以发送多个cookie？
+                *可以，创建多个对象，发送多次数据即可
+            2.cookie在浏览器保存多长时间？
+                * 默认情况下，浏览器关闭后，cookie数据被销毁
+                * 持久化存储：
+                    *setMaxAge(int seconds)
+                        正数：
+                        负数：默认值
+                        0：删除cookie信息
+            3.cookie能不能存中文？
+                * tomcat 8 之前不能，需要转码
+                      编码
+                      转码
+                * tomcat 8 之后可以
+
+            4.cookie获取范围多大？
+                1.  假设tomcat服务器中部署多个web项目，这些web项目的cookie能不能共享？
+                     * 默认不能
+                     * setPath(String path);
+                        如果需要共享，则可设置path的值为“/”
+                2.不同服务器共享之间的cookie？
+                    *  setDomain(String path);设置一级域名相同，则可以
+                        * setDomain(".baidu.com")那么。。。。。。。。。
+
+        5.特点和作用
+            1.cookie存储数据在客户端浏览器
+            2.浏览器对于单个cookie的大小有限制（4kb）以及同一域名下的总cookie数量有限制（20个）
+            *作用：1.coolie一般用与存储少量的不太敏感的数据
+                    2.在不登陆的情况下，完成服务器对客户端身份的识别
+
+        6.案例：记住上次的访问时间
+            1.需求：
+               1.访问一个servlet，如果是第一次访问，则提示你好，欢迎您
+               2.如果不是第一次访问，则提示欢迎您。上次的访问时间为：
+            2.分析：
+                1.可以采用cookie来完成、=
+                2.在服务区中的servlet判断是否有一个名为lastTime的cookie
+                    1.有：
+                        1.响应数据欢迎，上次时间为
+                        2.写回cookie
+                    2.没有
+                        1.响应数据，你好欢迎
+                        2.写回cookie
+
+###JSP 入门学习
+    1.概念：
+        * Java Server Pages :java服务器端页面
+            *可以理解为一个特殊的页面，其中既可以定义html标签，又可以定义java代码
+            * 可以简化书写
+
+    2. 原理
+        *JSP本质是一个Servlet
+
+    3.JSP脚本：JSP定义Java代码的方式
+        1.<%   代码 /%> 在service中
+        2.<%！ 代码 /%> 在类成员
+        3.<%=  代码 /%> 在输出语句中
+
+    4.JSP的内置对象 ：
+        *在JSP页面中不需要获取和创建，就可以直接使用的对象
+        *JSP一共有九个内置对象
+        *先学三个
+            *request
+            *response
+            *out：
+                *区别：response.getWriter()和out。write（）
+                *先response再out
+                *response永远在out之前
+    5.JSP改造登录案例案例  home.jsp
+
+###Session：
+    1.概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端对象中。HttpSession
+    2.快速入门：（demo1）
+        1. 获取HttpSession对象：
+            HttpSession session = request.getSession();
+        2.使用HttpSession对象：
+            Object getAttribute(String name)
+            void setAttribute(String name, Object value)
+            void removeAttribute(String name)
+        3.原理
+            * Session的实现是依赖Cookie的
+
+        4.细节：
+            1当客户端关闭后，服务器不关闭，两次session是否为同一个？
+                * 默认情况下，不是
+                * 如果需要，则可以创建cookie，键为SESSIONID，设置最大存活率，让cookie持久化保存
+                    Cookie c = new Cookie("SESSIONID",session.getID());
+                    c.setMaxAge(60*60);
+                    response.addCookie(c);
+
+            2. 客户端不关闭，服务器关闭后，两次获取的cookie是同一个吗？
+                * 不是，但是要确保数据不丢失
+                    * session的钝化：
+                        在服务器正常关闭后，将session的对象系列化到硬盘上
+                    * session的活化：
+                        在服务器启动后，将session文件转化为内存中的对象即可
+            3. session的失效时间
+                1 服务器关闭
+                2 session对象调用invalidate（）
+                3 session默认失效时间 30分钟
+                    选择性配置修改
+                    <session-config>
+                        <session-timeout>30<.session-timeout>
+                    </session-config>
+
+        5. session 的特点
+            1.session用于存储一次会话的多次请求的数据，存在服务器端
+            2.session可以存储任意类型，任意大小的数据
+
+            *session 与cookie的区别
+                1.session存储的数据在服务器端，cookie在客户端
+                2.session没有数据大小的限制，cookie有
+                3.session数据安全，cookie相对不安全
+
+###EL表达式
+    1.概念：
+    2.作用
+    3.语法：${表达式}
+    4.注意：
+        * JSP默认支持el表达式
+            1.isELIgnored="true"
+            2.\${表达式}
+
+
+    5.使用：
+        1.运算：
+            1.算术，运算，逻辑，空运算
+                ${empty list}
+
+        2.获取值
+            1.
+            2.语法：
+                1.${requestScope.name}
+
+                    域名称：
+                        pageScope
+                        requestScope
+                        sessionScope
+                        applicationScope
+                2.${键名}
+
+
+###格式化日期
+   SimpleD
+
+###Filter 过滤器
+    1.概念
+    2.快速入门
+        1.步骤
+            filter包里demo1
+
+    3.细节
+        1.web.xml配置
+            <filter>  //给类起名字
+                <filter-name>demo1</filter-name>
+                <filter-class>cn.itcast.web.filter.FilterDemo1</filter-class>
+            </filter>
+            <filter-mapping>   //名字拦截的路径
+                <filter-name>demo1</filter-name>
+                <url-pattern>/*</url-pattern>
+            </filter-mapping>
+
+        2.过滤器执行流程
+            执行过滤器-->执行放行后的资源-->回来执行过滤器方向下边的代码
+        3.过滤器生命周期
+            1. init：在服务器启动后，会创建Filter对象，然后调用init方法，只执行一次，用于加载资源
+            2. doFilter：每一次请求被拦截时都会调用，执行多次
+            3. destroy：在服务器关闭后，Filter对象被销毁，如果服务器正常关闭，只执行一次，用于释放资源
+        4.过滤器配置详解
+
+        5.过滤器链（配置多个过滤器）
+
+
+
+###JQuery
+    1.快速入门
+        1.下载版本--->2.导入min.js文件--->3.使用
+
+
+
+
+
+###maven二刷笔记
+        1.常用命令  mvn clean     清除项目编译信息 （清除target目录）
+                    mvn compile
+                    mvn text     编译
+                    mvn package
+                    mvn install
+                    mvn deploy
+
+        2.maven 模型
+            * 项目对象模型（POM）: 1. 项目自身信息
+                                  2. 项目运行所依赖的jar包
+                                  3.项目运行所依赖的环境 jdk，tomcat等
+
+            * 依赖管理模型   1.
+                            2.b2b
+                            3.local
+
+            * 默认生命周期  每一个命令都对应底层的一个插件
+
+        3.
+
+
+                *冲包  scope  

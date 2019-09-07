@@ -1,0 +1,113 @@
+
+body{
+    background: #C0C0C0;
+
+}
+.header {
+    margin: 0px;
+    width: 100%;
+    height: 80px;
+    padding-top: 40px;
+}
+.header-msg{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size:30px;
+
+}
+.ddd{
+    border-radius: 80px;
+    height: 700px;
+    margin-top: 20px;
+    padding-top: 30px;
+    background-image:url("../img/6.jpg");
+    background-size: cover;
+    overflow: hidden;
+
+}  <!--核心容器 浅蓝色层-->
+
+#1 {
+     width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      border: none;
+     border-bottom: 1px solid #fff;
+       outline: none;
+       background: transparent;
+}
+
+.rfloat{
+    float: right;
+}
+
+.blocks{
+    height: 720px;
+    margin: 0;
+    padding: 0;
+    width: 1200px;
+    overflow-y:auto ;
+}
+.action-block{
+    height: auto;
+    width: 780px;
+    /*background: red;*/
+    border-radius: 20px;
+    padding-left: 50px;
+    font-size: 30px;
+    box-shadow: 3px 3px 6px gainsboro;
+    color: gainsboro;
+    margin: 20px 10px;
+}
+.big{
+    font-size: 20px;
+    height: 50px;
+}
+.margin-left{
+    margin-left: 30px;
+}
+
+
+.footer{
+    border-radius: 20px;
+    height: 40px;
+    width: auto;
+    background: grey;
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+.bottom-p {
+    font-size: 28px;
+
+    margin: 0;
+    text-align: center;
+}
+
+
+.massage{
+    height: 300px;
+    width: 240px;
+    background: #808080;
+    position: fixed;
+    margin-top: 140px;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: outset;
+}
+.massage p{
+    border: none;
+}
+.massage a{
+    text-decoration-line: none;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #C0C0C0;
+    box-shadow: 2px 2px 2px #808080;
+
+}

@@ -1,0 +1,81 @@
+
+body{
+    background: #C0C0C0;
+    margin: 0;
+
+}
+.header {
+    margin: 0px;
+    width: 100%;
+    height: 80px;
+    padding-top: 40px;
+}
+.header-msg{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size:30px;
+}
+
+.ddd{
+    border-radius: 40px;
+    border: 1px solid #DCDCDC;
+    height: auto;
+
+    padding-top: 60px;
+    background: #DCDCDC;
+
+}
+.bdd{
+    border-style:outset;
+    margin: 10px;
+}
+
+.block-body{
+    width: auto;
+    height: 160px;
+    margin:5px 30px ;
+    overflow: hidden;
+    padding-right: 40px;
+    font-size: 20px;
+
+
+}
+.block-body h3{
+    margin-left: 40px;
+    padding-left:10px ;
+    padding-right: 10px;
+    font-family: 微软雅黑;
+
+}
+.auto{
+    height: auto;
+}
+.block-foot-a{
+    background: #DCDCDC;
+    float: right;
+    margin-bottom: 2px;
+    margin-right: 80px;: ;
+}
+
+
+.footer{
+    border-radius: 20px;
+    height: 40px;
+    width: auto;
+    background: grey;
+    margin-bottom: 0;
+    margin-top: 60px;
+
+}
+.bottom-p {
+    font-size: 28px;
+
+    margin: 0;
+    text-align: center;
+}
+
+
+
+
